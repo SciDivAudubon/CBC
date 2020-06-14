@@ -1,0 +1,935 @@
+<html>
+<head>
+<title>CBC Trends</title>
+<head>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KVRN7F7');</script>
+	<!-- End Google Tag Manager -->
+	
+  <meta charset="utf-8" />
+  <html lang="en">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+  <!--Author: Gregg Verutes (gverutes@audubon.org)-->  
+  
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
+  <!--CartoDB-->
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.uncompressed.js"></script>
+  
+  <!-- Leaflet Plugins -->
+   <link rel="stylesheet" href="css/leaflet.draw.css"/>
+  <script src="js/leaflet.draw.js"></script>
+  
+  <!--NAS JS Dependencies-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/app.css" />
+  <!--[if lte IE 11]>
+      <link rel="stylesheet" href="css/app.css" />
+  <![endif]-->
+  
+  <!--Google-->  
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  
+</head>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">  
+ 
+
+
+/////////////////////////////////////////////////////////////////////
+// LINE CHART ///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
+unitname_selected = '';
+ 
+// load visualization library from Google
+google.load("visualization", "1", {packages: ['corechart', 'line']});
+//google.charts.setOnLoadCallback(draw_chart);
+
+function draw_chart(data) {
+google.setOnLoadCallback(draw_chart);
+	
+var data = google.visualization.arrayToDataTable([
+  ['Year', 'Estimated Index', 'LCL', 'UCL'],
+  ['1967',  data[0], data[1], data[2]], 
+  ['1968',  data[3], data[4], data[5]],
+  ['1969',  data[6], data[7], data[8]],
+  ['1970',  data[9], data[10], data[11]],
+  ['1971',  data[12], data[13], data[14]],
+  ['1971',  data[15], data[16], data[17]],
+  ['1973',  data[18], data[19], data[20]],
+  ['1974',  data[21], data[22], data[23]],
+  ['1975',  data[24], data[25], data[26]],
+  ['1976',  data[27], data[28], data[29]],
+  ['1977',  data[30], data[31], data[32]],
+  ['1978',  data[33], data[34], data[35]],
+  ['1979',  data[36], data[37], data[38]],
+  ['1980',  data[39], data[40], data[41]],
+  ['1981',  data[42], data[43], data[44]],
+  ['1982',  data[45], data[46], data[47]],
+  ['1983',  data[48], data[49], data[50]],
+  ['1984',  data[51], data[52], data[53]],
+  ['1985',  data[54], data[55], data[56]],
+  ['1986',  data[57], data[58], data[59]],
+  ['1987',  data[60], data[61], data[62]],
+  ['1988',  data[63], data[64], data[65]],
+  ['1989',  data[66], data[67], data[68]],
+  ['1990',  data[69], data[70], data[71]],
+  ['1991',  data[72], data[73], data[74]],
+  ['1992',  data[75], data[76], data[77]],
+  ['1993',  data[78], data[79], data[80]],
+  ['1994',  data[81], data[82], data[83]],
+  ['1995',  data[84], data[85], data[86]],
+  ['1996',  data[87], data[88], data[89]],
+  ['1997',  data[90], data[91], data[92]],
+  ['1998',  data[93], data[94], data[95]],
+  ['1999',  data[96], data[97], data[98]],
+  ['2000',  data[99], data[100], data[101]],
+  ['2001',  data[102], data[103], data[104]],
+  ['2002',  data[105], data[106], data[107]],
+  ['2003',  data[108], data[109], data[110]],
+  ['2004',  data[111], data[112], data[113]],
+  ['2005',  data[114], data[115], data[116]],
+  ['2006',  data[117], data[118], data[119]],
+  ['2007',  data[120], data[121], data[122]],
+  ['2008',  data[123], data[124], data[125]],
+  ['2009',  data[126], data[127], data[128]],
+  ['2010',  data[129], data[130], data[131]],
+  ['2011',  data[132], data[133], data[134]],
+  ['2012',  data[135], data[136], data[137]],
+  ['2013',  data[138], data[139], data[140]],
+  ['2014',  data[141], data[142], data[143]],
+  ['2015',  data[144], data[145], data[146]],
+  ['2016',  data[147], data[148], data[149]],
+  ['2017',  data[150], data[151], data[152]],
+  //['2018',  data[153], data[154], data[155]],
+]);
+
+	  
+      var options = {
+
+		//title: 'xxx in xxx (1967-2017)',
+		//title: name+" in "+unit+" (1967-2017)",	
+		//$(".cartodb-infowindow").xxx();
+		//$(".cartodb-tooltip-content-wrapper").xxx();	
+		
+		title: "Time Series (1967-2017) for "+unitname_selected,
+		subtitle: "test",
+		width: 500,
+		height: 250,
+		legend: 'top', 
+		 series: {
+            0: {color: '#000', lineWidth: 2, lineDashStyle: [1, 0] },
+            1: {color: '#737373', lineWidth: 1.5, lineDashStyle: [3, 3] },
+            2: {color: '#737373', lineWidth: 1.5, lineDashStyle: [3, 3] },
+
+          },
+        hAxis: {
+
+          title: 'Year'
+        },
+        vAxis: {
+		   //minValue: -10,
+		   //maxValue: 30,
+          title: 'Abundance index'
+        },
+        colors: ['#a52714', '#097138']
+      };
+
+ //var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.LineChart($('#chart_div')[0]);
+
+      chart.draw(data, options); 
+    }
+
+</script>	
+  
+  
+<style type="text/css">
+body{
+font: 100% "Noto Serif", sans-serif;
+margin: 0;
+padding: 0px;
+border: 0;
+height: 100%;  0
+max-height: 100%;
+overflow: hidden;
+}
+
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+
+img {
+    max-width: 100%;
+    max-height: auto;
+	margin-left:0%; margin-right:0%;
+}
+
+
+br {
+	line-height: 100%;
+}
+
+h5 {
+	line-height: 100%;
+}
+
+input[type="text"] {
+    width: 206px;
+}
+
+input[type="radio"]{
+ vertical-align: top;
+}
+
+
+
+#table03a { width:100%; border:0px solid #D9D5BE; margin:0px; padding: 1px; background:#fff; border-collapse:separate;}
+#table03a td { border:0px solid #D9D5BE; vertical-align: middle; width: 300px; padding: 0px;}
+
+
+<!--.cartodb-popup v2 p {z-index:9999;}-->
+
+.map-legend{
+	   border-radius: 5px;
+	   position: absolute;
+	   top: -164px;
+	   right: 155px;
+	   padding-left: 8px;
+	   padding-right: 8px;
+	   padding-top: 12px;
+	   padding-bottom: 0px;
+	   border:1px solid #000;
+	   background-color: #fff; 
+	   max-width: 720px;
+	   min-width: 465px;
+	   max-height: 130px;
+	   min-height: 155px;
+}
+  
+.bottom{
+	   border-radius: 5px;
+	   position: absolute;
+	   bottom: 0px;
+	   min-height: 200px;
+	   max-width: 325px;
+	   left: 0px;
+	   padding-left: 22px;
+	   padding-right: -10px;
+	   border:1px solid #000;
+	   background-color: #E6E7E8; 
+}
+  
+
+img.resize {
+	max-width: 100%;
+	max-height: 100%;
+	ms-interpolation-mode: bicubic;
+}  
+
+
+
+/* gives the tooltip a margin from the pointer */
+  
+  body > div.cartodb-tooltip{
+	margin-top: 10px !important;
+	margin-left: 10px !important;
+	border-radius: 15px;
+	z-index:1;
+  }
+  /* gives to the tooltip different styles */
+  div.cartodb-tooltip-content-wrapper{
+  font: 85% "Noto Serif", sans-serif;
+	padding: 5px 5px 5px 5px;
+	max-width: 200px;
+	text-align: center;
+	background-color: #fff!important;
+	opacity: 1;
+	border-radius: 35px!important;
+	z-index:9999;
+  }
+  /* set styles to the <p> tag of the tooltip */
+   div.cartodb-tooltip-content-wrapper p{
+	color: black!important;
+  }
+  /* set infobox styles */
+ .cartodb-infobox{
+	opacity:1;
+	background-color: #fff!important;
+	color: #fff!important;
+	border-radius: 50px!important;
+  }
+ /* set styles to the div element with id= box */
+ /* #box{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 200px;
+	height: 170px;
+	opacity: 1;
+	padding: 5px 10px 5px 10px;
+	border-radius: 25px;
+	background-color: #FFF;
+	color: #fdb462;
+
+  }*/
+  /* set styles to the <h4> tag of the element with id= box */
+  #box h4{
+	font-style: italic;
+  }
+  /* set styles to the <p> tag of the element with id= box */
+  #box p{
+	text-align: center;
+	font-size: 18px;
+	color:red;
+
+  }
+  /* set styles to the custom infowindow */
+  .infowindow-custom{ 
+	position: relative;
+	width: 500px;
+	background-color: #FFF;
+	margin-bottom: 2px;
+	opacity: 1;
+	text-align: left;
+	font-style: oblique;
+	background-color: #FFF;
+	color: #fdb462;
+	border-radius: 10px;
+  }
+  
+  .cartodb-popup-content .content h3{
+	  font-style: italic;
+  }
+  .cartodb-popup-content .content p{
+	  text-align: left;
+	  font-size: 16px;
+	  color:red;
+	  margin-left: 20px;
+  }
+   
+  /* set styles to the custom infowindow -> close button */
+  .cartodb-popup-close-button {
+	position: absolute;
+	top: -12px;
+	right: -11px;
+	width: 26px;
+	height: 26px;
+	background: url('http://libs.cartodb.com/cartodb.js/v3/themes/img/light.png') no-repeat 0 -23px;
+	text-indent: -9999px;
+	font-size: 0;
+	line-height: 0;
+	opacity: 1;
+	text-transform: uppercase;
+	z-index: 3;
+  }
+  /* set styles to the custom infowindow -> tip container */
+  .cartodb-popup-tip-container{
+	position: absolute;
+	bottom: -13px;
+	left: 23px;
+	 width: 16px;
+	 height: 14px;
+	 background: url('http://libs.cartodb.com/cartodb.js/v3/themes/img/light.png') no-repeat -23px -7px;
+	 text-indent: -9999px;
+	 font-size: 0;
+	 line-height: 0;
+	 opacity: 1;
+	 z-index: 3;
+  }
+  /* change legend's position and style */
+  .cartodb-legend{
+	 left: 20px;
+	 bottom: 50px!important;
+	 width: 90px;
+	 height: auto;
+	 background-color: #FFF;
+	 opacity: 1;
+	 border-radius: 25px!important;
+   } 
+   .cartodb-legend ul li{
+	margin-left: 5px!important;
+	font-style: italic!important;
+	font-size: 10px!important;
+
+   }
+  
+
+* {
+  box-sizing: border-box;
+}
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #d3d3d3; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}  
+  
+
+  
+  
+<!-- add styles for background of checkboxes and also drop-down menu locations >> USE BAHAMAS OR UAE VIEWERS --> 
+
+</style>
+
+<body>
+
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVRN7F7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div id="map"></div>
+
+
+<script type="infowindow/html" id="infowindow_template">
+<div class="cartodb-popup v2">
+    <a href="#close" class="cartodb-popup-close-button close">x</a>
+    <div class="cartodb-popup-content-wrapper">
+    <div class="cartodb-popup-content">
+		<div id="chart_div">
+		<script>
+		draw_chart([{{content.data.med_1967}}, {{content.data.lcl_1967}}, {{content.data.ucl_1967}}, {{content.data.med_1968}}, {{content.data.lcl_1968}}, {{content.data.ucl_1968}}, {{content.data.med_1969}}, {{content.data.lcl_1969}}, {{content.data.ucl_1969}}, {{content.data.med_1970}}, {{content.data.lcl_1970}}, {{content.data.ucl_1970}}, {{content.data.med_1971}}, {{content.data.lcl_1971}}, {{content.data.ucl_1971}}, {{content.data.med_1972}}, {{content.data.lcl_1972}}, {{content.data.ucl_1972}}, {{content.data.med_1973}}, {{content.data.lcl_1973}}, {{content.data.ucl_1973}}, {{content.data.med_1974}}, {{content.data.lcl_1974}}, {{content.data.ucl_1974}}, {{content.data.med_1975}}, {{content.data.lcl_1975}}, {{content.data.ucl_1975}}, {{content.data.med_1976}}, {{content.data.lcl_1976}}, {{content.data.ucl_1976}}, {{content.data.med_1977}}, {{content.data.lcl_1977}}, {{content.data.ucl_1977}}, {{content.data.med_1978}}, {{content.data.lcl_1978}}, {{content.data.ucl_1978}}, {{content.data.med_1979}}, {{content.data.lcl_1979}}, {{content.data.ucl_1979}}, {{content.data.med_1980}}, {{content.data.lcl_1980}}, {{content.data.ucl_1980}}, {{content.data.med_1981}}, {{content.data.lcl_1981}}, {{content.data.ucl_1981}}, {{content.data.med_1982}}, {{content.data.lcl_1982}}, {{content.data.ucl_1982}}, {{content.data.med_1983}}, {{content.data.lcl_1983}}, {{content.data.ucl_1983}}, {{content.data.med_1984}}, {{content.data.lcl_1984}}, {{content.data.ucl_1984}}, {{content.data.med_1985}}, {{content.data.lcl_1985}}, {{content.data.ucl_1985}}, {{content.data.med_1986}}, {{content.data.lcl_1986}}, {{content.data.ucl_1986}}, {{content.data.med_1987}}, {{content.data.lcl_1987}}, {{content.data.ucl_1987}}, {{content.data.med_1988}}, {{content.data.lcl_1988}}, {{content.data.ucl_1988}}, {{content.data.med_1989}}, {{content.data.lcl_1989}}, {{content.data.ucl_1989}}, {{content.data.med_1990}}, {{content.data.lcl_1990}}, {{content.data.ucl_1990}}, {{content.data.med_1991}}, {{content.data.lcl_1991}}, {{content.data.ucl_1991}}, {{content.data.med_1992}}, {{content.data.lcl_1992}}, {{content.data.ucl_1992}}, {{content.data.med_1993}}, {{content.data.lcl_1993}}, {{content.data.ucl_1993}}, {{content.data.med_1994}}, {{content.data.lcl_1994}}, {{content.data.ucl_1994}}, {{content.data.med_1995}}, {{content.data.lcl_1995}}, {{content.data.ucl_1995}}, {{content.data.med_1996}}, {{content.data.lcl_1996}}, {{content.data.ucl_1996}}, {{content.data.med_1997}}, {{content.data.lcl_1997}}, {{content.data.ucl_1997}}, {{content.data.med_1998}}, {{content.data.lcl_1998}}, {{content.data.ucl_1998}}, {{content.data.med_1999}}, {{content.data.lcl_1999}}, {{content.data.ucl_1999}}, {{content.data.med_2000}}, {{content.data.lcl_2000}}, {{content.data.ucl_2000}}, {{content.data.med_2001}}, {{content.data.lcl_2001}}, {{content.data.ucl_2001}}, {{content.data.med_2002}}, {{content.data.lcl_2002}}, {{content.data.ucl_2002}}, {{content.data.med_2003}}, {{content.data.lcl_2003}}, {{content.data.ucl_2003}}, {{content.data.med_2004}}, {{content.data.lcl_2004}}, {{content.data.ucl_2004}}, {{content.data.med_2005}}, {{content.data.lcl_2005}}, {{content.data.ucl_2005}}, {{content.data.med_2006}}, {{content.data.lcl_2006}}, {{content.data.ucl_2006}}, {{content.data.med_2007}}, {{content.data.lcl_2007}}, {{content.data.ucl_2007}}, {{content.data.med_2008}}, {{content.data.lcl_2008}}, {{content.data.ucl_2008}}, {{content.data.med_2009}}, {{content.data.lcl_2009}}, {{content.data.ucl_2009}}, {{content.data.med_2010}}, {{content.data.lcl_2010}}, {{content.data.ucl_2010}}, {{content.data.med_2011}}, {{content.data.lcl_2011}}, {{content.data.ucl_2011}}, {{content.data.med_2012}}, {{content.data.lcl_2012}}, {{content.data.ucl_2012}}, {{content.data.med_2013}}, {{content.data.lcl_2013}}, {{content.data.ucl_2013}}, {{content.data.med_2014}}, {{content.data.lcl_2014}}, {{content.data.ucl_2014}}, {{content.data.med_2015}}, {{content.data.lcl_2015}}, {{content.data.ucl_2015}}, {{content.data.med_2016}}, {{content.data.lcl_2016}}, {{content.data.ucl_2016}}, {{content.data.med_2017}}, {{content.data.lcl_2017}}, {{content.data.ucl_2017}}]);
+		</script>
+		</div>
+    </div>
+  </div>
+  <div class="cartodb-popup-tip-container"></div>
+</div>
+</script>
+
+
+
+<script>
+
+// define basemaps
+var ESRIImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri'});
+
+var CartoLight = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+		  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+		});
+
+var OSMStreets = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org">OpenStreetMaps</a>'});
+
+var MapboxTerrain = L.tileLayer('http://a.tiles.mapbox.com/v3/geointerest.e4qjes5f/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2VvaW50ZXJlc3QiLCJhIjoiQ2czbnlDMCJ9.pQ-_LxzHCL6WqMm5rJrEWw', {attribution: '&copy; <a href="http://www.mapbox.com">Mapbox</a>'});
+
+
+var ESRIGrey = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri'});	
+
+// set base map and controls
+var map = new L.Map('map', {
+  zoomControl: false,
+  layer_selector: false,
+  layers: [CartoLight],
+  center: [48, -105],
+  zoom: 3,
+  minZoom: 3,
+  maxZoom: 8
+});
+
+
+var southWest = L.latLng(-30, -220),
+northEast = L.latLng(220, 0);
+var bounds = L.latLngBounds(southWest, northEast);
+
+map.setMaxBounds(bounds);
+map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
+});
+
+// scale
+L.control.scale({ position: 'topleft' }).addTo(map);
+map.scrollWheelZoom.disable();
+map.attributionControl.setPrefix('Viewer by: <a href="mailto:gverutes@audubon.org">Gregg Verutes</a>');
+
+// zoom
+L.control.zoom({position:'topleft'}).addTo(map);
+
+// removed: <option value='7'>California Towhee</option> <option value='81'>Western Scrub-Jay</option> <option value='84'>Florida Scrub-Jay</option>
+
+// drop-downs on map
+var legend = L.control({position: 'bottomleft'});
+legend.onAdd = function (map) {
+  
+  
+	var div = L.DomUtil.create('div', 'info legend');
+	div.innerHTML = div.innerHTML + "<div class='bottom'>&nbsp;&nbsp;<div class='controlgroup'><b>SELECT -OR- TYPE SPECIES:</b><br><select id='A-Z'><option value='0'>A-Z</option><option value='1'>Abert's Towhee</option><option value='2'>Acorn Woodpecker</option><option value='3'>Allen's Hummingbird</option><option value='4'>Altamira Oriole</option><option value='5'>American Avocet</option><option value='6'>American Bittern</option><option value='7'>American Black Duck</option><option value='8'>American Coot</option><option value='9'>American Crow</option><option value='10'>American Dipper</option><option value='11'>American Goldfinch</option><option value='12'>American Kestrel</option><option value='13'>American Oystercatcher</option><option value='14'>American Pipit</option><option value='15'>American Redstart</option><option value='16'>American Robin</option><option value='17'>American Three-toed Woodpecker</option><option value='18'>American Tree Sparrow</option><option value='19'>American White Pelican</option><option value='20'>American Wigeon</option><option value='21'>American Woodcock</option><option value='22'>Ancient Murrelet</option><option value='23'>Anhinga</option><option value='24'>Anna's Hummingbird</option><option value='25'>Aplomado Falcon</option><option value='26'>Arctic Loon</option><option value='27'>Arizona Woodpecker</option><option value='28'>Ash-throated Flycatcher</option><option value='29'>Atlantic Puffin</option><option value='30'>Audubon's Oriole</option><option value='31'>Bachman's Sparrow</option><option value='32'>Baird's Sparrow</option><option value='33'>Bald Eagle</option><option value='34'>Baltimore Oriole</option><option value='35'>Band-tailed Pigeon</option><option value='36'>Barn Owl</option><option value='37'>Barn Swallow</option><option value='38'>Barred Owl</option><option value='39'>Barrow's Goldeneye</option><option value='40'>Bell's Vireo</option><option value='41'>Belted Kingfisher</option><option value='42'>Bendire's Thrasher</option><option value='43'>Bewick's Wren</option><option value='44'>Black Guillemot</option><option value='45'>Black Oystercatcher</option><option value='46'>Black Phoebe</option><option value='47'>Black Rail</option><option value='48'>Black Rosy-Finch</option><option value='49'>Black Scoter</option><option value='50'>Black Skimmer</option><option value='51'>Black Turnstone</option><option value='52'>Black Vulture</option><option value='53'>Black-and-white Warbler</option><option value='54'>Black-backed Woodpecker</option><option value='55'>Black-bellied Plover</option><option value='56'>Black-bellied Whistling-Duck</option><option value='57'>Black-billed Magpie</option><option value='58'>Black-capped Chickadee</option><option value='59'>Black-chinned Hummingbird</option><option value='60'>Black-chinned Sparrow</option><option value='61'>Black-crowned Night-Heron</option><option value='62'>Black-footed Albatross</option><option value='63'>Black-headed Grosbeak</option><option value='64'>Black-headed Gull</option><option value='65'>Black-legged Kittiwake</option><option value='66'>Black-necked Stilt</option><option value='67'>Black-throated Blue Warbler</option><option value='68'>Black-throated Gray Warbler</option><option value='69'>Black-throated Green Warbler</option><option value='70'>Black-throated Sparrow</option><option value='71'>Blue Grosbeak</option><option value='72'>Blue Jay</option><option value='73'>Blue-gray Gnatcatcher</option><option value='74'>Blue-throated Hummingbird</option><option value='75'>Blue-winged Teal</option><option value='76'>Boat-tailed Grackle</option><option value='77'>Bohemian Waxwing</option><option value='78'>Bonaparte's Gull</option><option value='79'>Boreal Chickadee</option><option value='80'>Boreal Owl</option><option value='81'>Brandt's Cormorant</option><option value='82'>Brant</option><option value='83'>Brewer's Blackbird</option><option value='84'>Brewer's Sparrow</option><option value='85'>Bridled Titmouse</option><option value='86'>Broad-billed Hummingbird</option><option value='87'>Broad-tailed Hummingbird</option><option value='88'>Broad-winged Hawk</option><option value='89'>Bronzed Cowbird</option><option value='90'>Brown Booby</option><option value='91'>Brown Creeper</option><option value='92'>Brown Pelican</option><option value='93'>Brown Thrasher</option><option value='94'>Brown-crested Flycatcher</option><option value='95'>Brown-headed Cowbird</option><option value='96'>Brown-headed Nuthatch</option><option value='97'>Budgerigar</option><option value='98'>Buff-bellied Hummingbird</option><option value='99'>Bufflehead</option><option value='100'>Bullock's Oriole</option><option value='101'>Burrowing Owl</option><option value='102'>Bushtit</option><option value='103'>Cactus Wren</option><option value='104'>California Condor</option><option value='105'>California Gnatcatcher</option><option value='106'>California Gull</option><option value='107'>California Quail</option><option value='108'>California Thrasher</option><option value='110'>Calliope Hummingbird</option><option value='111'>Canada Goose</option><option value='112'>Canvasback</option><option value='113'>Canyon Wren</option><option value='114'>Cape May Warbler</option><option value='115'>Carolina Chickadee</option><option value='116'>Carolina Wren</option><option value='117'>Caspian Tern</option><option value='118'>Cassin's Auklet</option><option value='119'>Cassin's Finch</option><option value='120'>Cassin's Kingbird</option><option value='121'>Cassin's Sparrow</option><option value='122'>Cattle Egret</option><option value='123'>Cave Swallow</option><option value='124'>Cedar Waxwing</option><option value='125'>Chestnut-backed Chickadee</option><option value='126'>Chestnut-collared Longspur</option><option value='127'>Chestnut-sided Warbler</option><option value='128'>Chihuahuan Raven</option><option value='129'>Chipping Sparrow</option><option value='130'>Chuck-will's-widow</option><option value='131'>Chukar</option><option value='132'>Cinnamon Teal</option><option value='133'>Clapper Rail</option><option value='134'>Clark's Grebe</option><option value='135'>Clark's Nutcracker</option><option value='136'>Clay-colored Sparrow</option><option value='137'>Clay-colored Thrush</option><option value='138'>Common Eider</option><option value='139'>Common Gallinule</option><option value='140'>Common Goldeneye</option><option value='141'>Common Grackle</option><option value='142'>Common Ground-Dove</option><option value='143'>Common Loon</option><option value='144'>Common Merganser</option><option value='145'>Common Murre</option><option value='146'>Common Myna</option><option value='147'>Common Pauraque</option><option value='148'>Common Poorwill</option><option value='149'>Common Raven</option><option value='150'>Common Redpoll</option><option value='151'>Common Tern</option><option value='152'>Common Yellowthroat</option><option value='153'>Cooper's Hawk</option><option value='154'>Costa's Hummingbird</option><option value='155'>Crested Caracara</option><option value='156'>Crested Myna</option><option value='157'>Crissal Thrasher</option><option value='158'>Curve-billed Thrasher</option><option value='159'>Dark-eyed Junco</option><option value='160'>Double-crested Cormorant</option><option value='161'>Dovekie</option><option value='162'>Downy Woodpecker</option><option value='163'>Dunlin</option><option value='164'>Dusky Flycatcher</option><option value='165'>Dusky Grouse</option><option value='166'>Dusky-capped Flycatcher</option><option value='167'>Eared Grebe</option><option value='168'>Eastern Bluebird</option><option value='169'>Eastern Meadowlark</option><option value='170'>Eastern Phoebe</option><option value='171'>Eastern Screech-Owl</option><option value='172'>Eastern Whip-poor-will</option><option value='173'>Eastern Wood-Pewee</option><option value='174'>Elegant Tern</option><option value='175'>Elegant Trogon</option><option value='176'>Emperor Goose</option><option value='177'>Eurasian Collared-Dove</option><option value='178'>Eurasian Tree Sparrow</option><option value='179'>Eurasian Wigeon</option><option value='180'>European Starling</option><option value='181'>Evening Grosbeak</option><option value='182'>Ferruginous Hawk</option><option value='183'>Ferruginous Pygmy-Owl</option><option value='184'>Field Sparrow</option><option value='185'>Fish Crow</option><option value='187'>Forster's Tern</option><option value='188'>Fox Sparrow</option><option value='189'>Franklin's Gull</option><option value='190'>Fulvous Whistling-Duck</option><option value='191'>Gadwall</option><option value='192'>Gambel's Quail</option><option value='193'>Gila Woodpecker</option><option value='194'>Gilded Flicker</option><option value='195'>Glaucous Gull</option><option value='196'>Glaucous-winged Gull</option><option value='197'>Glossy Ibis</option><option value='198'>Golden Eagle</option><option value='199'>Golden-crowned Kinglet</option><option value='200'>Golden-crowned Sparrow</option><option value='201'>Golden-fronted Woodpecker</option><option value='202'>Grasshopper Sparrow</option><option value='203'>Gray Catbird</option><option value='204'>Gray Flycatcher</option><option value='205'>Gray Hawk</option><option value='206'>Gray Jay</option><option value='207'>Gray Partridge</option><option value='208'>Great Black-backed Gull</option><option value='209'>Great Blue Heron</option><option value='210'>Great Cormorant</option><option value='211'>Great Crested Flycatcher</option><option value='212'>Great Egret</option><option value='213'>Great Gray Owl</option><option value='214'>Great Horned Owl</option><option value='215'>Great Kiskadee</option><option value='216'>Greater Pewee</option><option value='217'>Greater Prairie-Chicken</option><option value='218'>Greater Roadrunner</option><option value='219'>Greater Sage-Grouse</option><option value='220'>Greater Scaup</option><option value='221'>Greater White-fronted Goose</option><option value='222'>Greater Yellowlegs</option><option value='223'>Green Heron</option><option value='224'>Green Jay</option><option value='225'>Green Kingfisher</option><option value='226'>Green Parakeet</option><option value='227'>Green-tailed Towhee</option><option value='228'>Green-winged Teal</option><option value='229'>Groove-billed Ani</option><option value='230'>Gull-billed Tern</option><option value='231'>Gyrfalcon</option><option value='232'>Hairy Woodpecker</option><option value='233'>Hammond's Flycatcher</option><option value='234'>Harlequin Duck</option><option value='235'>Harris's Hawk</option><option value='236'>Harris's Sparrow</option><option value='237'>Heermann's Gull</option><option value='238'>Henslow's Sparrow</option><option value='239'>Hepatic Tanager</option><option value='240'>Hermit Thrush</option><option value='241'>Hermit Warbler</option><option value='242'>Herring Gull</option><option value='243'>Hill Myna</option><option value='244'>Hoary Redpoll</option><option value='245'>Hooded Merganser</option><option value='246'>Hooded Oriole</option><option value='247'>Hook-billed Kite</option><option value='248'>Horned Grebe</option><option value='249'>Horned Lark</option><option value='250'>House Finch</option><option value='251'>House Sparrow</option><option value='252'>House Wren</option><option value='253'>Hutton's Vireo</option><option value='254'>Inca Dove</option><option value='255'>Indigo Bunting</option><option value='256'>Killdeer</option><option value='257'>King Eider</option><option value='258'>King Rail</option><option value='259'>Ladder-backed Woodpecker</option><option value='260'>Lapland Longspur</option><option value='261'>Lark Bunting</option><option value='262'>Lark Sparrow</option><option value='263'>Laughing Gull</option><option value='264'>Lawrence's Goldfinch</option><option value='265'>Lazuli Bunting</option><option value='266'>Least Bittern</option><option value='267'>Least Flycatcher</option><option value='268'>Least Grebe</option><option value='269'>Least Sandpiper</option><option value='270'>Least Tern</option><option value='271'>LeConte's Sparrow</option><option value='272'>LeConte's Thrasher</option><option value='273'>Lesser Black-backed Gull</option><option value='274'>Lesser Goldfinch</option><option value='275'>Lesser Nighthawk</option><option value='276'>Lesser Prairie-Chicken</option><option value='277'>Lesser Scaup</option><option value='278'>Lesser Yellowlegs</option><option value='279'>Lewis's Woodpecker</option><option value='280'>Limpkin</option><option value='281'>Lincoln's Sparrow</option><option value='282'>Little Blue Heron</option><option value='283'>Little Gull</option><option value='284'>Loggerhead Shrike</option><option value='285'>Long-billed Curlew</option><option value='286'>Long-billed Dowitcher</option><option value='287'>Long-billed Thrasher</option><option value='288'>Long-eared Owl</option><option value='289'>Long-tailed Duck</option><option value='290'>Louisiana Waterthrush</option><option value='291'>MacGillivray's Warbler</option><option value='292'>Magnificent Frigatebird</option><option value='293'>Magnolia Warbler</option><option value='294'>Mallard</option><option value='295'>Rivoli's Hummingbird</option><option value='296'>Marbled Godwit</option><option value='297'>Marbled Murrelet</option><option value='298'>Marsh Wren</option><option value='299'>McCown's Longspur</option><option value='300'>McKay's Bunting</option><option value='301'>Merlin</option><option value='302'>Mew Gull</option><option value='303'>Mexican Chickadee</option><option value='304'>Mexican Jay</option><option value='305'>Monk Parakeet</option><option value='306'>Montezuma Quail</option><option value='307'>Mottled Duck</option><option value='308'>Mountain Bluebird</option><option value='309'>Mountain Chickadee</option><option value='310'>Mountain Plover</option><option value='311'>Mountain Quail</option><option value='312'>Mourning Dove</option><option value='313'>Mute Swan</option><option value='314'>Nashville Warbler</option><option value='315'>Neotropic Cormorant</option><option value='316'>Northern Beardless-Tyrannulet</option><option value='317'>Northern Bobwhite</option><option value='318'>Northern Cardinal</option><option value='319'>Northern Flicker</option><option value='320'>Northern Fulmar</option><option value='321'>Northern Gannet</option><option value='322'>Northern Goshawk</option><option value='323'>Northern Harrier</option><option value='324'>Northern Hawk Owl</option><option value='325'>Northern Mockingbird</option><option value='326'>Northern Parula</option><option value='327'>Northern Pintail</option><option value='328'>Northern Pygmy-Owl</option><option value='329'>Northern Rough-winged Swallow</option><option value='330'>Northern Saw-whet Owl</option><option value='331'>Northern Shoveler</option><option value='332'>Northern Shrike</option><option value='333'>Northern Waterthrush</option><option value='334'>Northwestern Crow</option><option value='335'>Nuttall's Woodpecker</option><option value='336'>Oak Titmouse</option><option value='337'>Olive Sparrow</option><option value='338'>Olive Warbler</option><option value='339'>Orange-crowned Warbler</option><option value='340'>Orchard Oriole</option><option value='341'>Osprey</option><option value='342'>Ovenbird</option><option value='343'>Pacific Golden-Plover</option><option value='344'>Pacific-slope Flycatcher</option><option value='345'>Painted Bunting</option><option value='346'>Painted Redstart</option><option value='347'>Palm Warbler</option><option value='348'>Parasitic Jaeger</option><option value='349'>Pectoral Sandpiper</option><option value='350'>Pelagic Cormorant</option><option value='351'>Peregrine Falcon</option><option value='352'>Phainopepla</option><option value='353'>Pied-billed Grebe</option><option value='354'>Pigeon Guillemot</option><option value='355'>Pileated Woodpecker</option><option value='356'>Pine Grosbeak</option><option value='357'>Pine Siskin</option><option value='358'>Pine Warbler</option><option value='359'>Pinyon Jay</option><option value='360'>Piping Plover</option><option value='361'>Plain Chachalaca</option><option value='362'>Pomarine Jaeger</option><option value='363'>Prairie Falcon</option><option value='364'>Prairie Warbler</option><option value='365'>Prothonotary Warbler</option><option value='366'>Purple Finch</option><option value='367'>Purple Gallinule</option><option value='368'>Purple Sandpiper</option><option value='369'>Pygmy Nuthatch</option><option value='370'>Pyrrhuloxia</option><option value='371'>Razorbill</option><option value='372'>Red Crossbill</option><option value='373'>Red Knot</option><option value='374'>Red-bellied Woodpecker</option><option value='375'>Red-billed Pigeon</option><option value='376'>Red-breasted Merganser</option><option value='377'>Red-breasted Nuthatch</option><option value='378'>Red-breasted Sapsucker</option><option value='379'>Red-cockaded Woodpecker</option><option value='380'>Red-crowned Parrot</option><option value='381'>Reddish Egret</option><option value='382'>Red-faced Cormorant</option><option value='383'>Redhead</option><option value='384'>Red-headed Woodpecker</option><option value='385'>Red-necked Grebe</option><option value='386'>Red-necked Phalarope</option><option value='387'>Red-shouldered Hawk</option><option value='388'>Red-tailed Hawk</option><option value='389'>Red-throated Loon</option><option value='390'>Red-winged Blackbird</option><option value='391'>Rhinoceros Auklet</option><option value='392'>Ring-billed Gull</option><option value='393'>Ringed Kingfisher</option><option value='394'>Ring-necked Duck</option><option value='395'>Ring-necked Pheasant</option><option value='396'>Rock Ptarmigan</option><option value='397'>Rock Sandpiper</option><option value='398'>Rock Wren</option><option value='399'>Roseate Spoonbill</option><option value='400'>Rose-breasted Grosbeak</option><option value='401'>Rose-ringed Parakeet</option><option value='402'>Ross's Goose</option><option value='403'>Rough-legged Hawk</option><option value='404'>Royal Tern</option><option value='405'>Ruby-crowned Kinglet</option><option value='406'>Ruby-throated Hummingbird</option><option value='407'>Ruddy Duck</option><option value='408'>Ruddy Ground-Dove</option><option value='409'>Ruddy Turnstone</option><option value='410'>Ruffed Grouse</option><option value='411'>Rufous Hummingbird</option><option value='412'>Rufous-crowned Sparrow</option><option value='413'>Rufous-sided Towhee</option><option value='414'>Rufous-winged Sparrow</option><option value='415'>Rusty Blackbird</option><option value='416'>Sage Thrasher</option><option value='417'>Sagebrush Sparrow</option><option value='418'>Sanderling</option><option value='419'>Sandhill Crane</option><option value='420'>Sandwich Tern</option><option value='421'>Savannah Sparrow</option><option value='422'>Say's Phoebe</option><option value='423'>Scaled Quail</option><option value='424'>Scissor-tailed Flycatcher</option><option value='425'>Scott's Oriole</option><option value='426'>Seaside Sparrow</option><option value='427'>Sedge Wren</option><option value='428'>Semipalmated Plover</option><option value='429'>Semipalmated Sandpiper</option><option value='430'>Sharp-shinned Hawk</option><option value='431'>Sharp-tailed Grouse</option><option value='432'>Sharp-tailed Sparrow</option><option value='433'>Shiny Cowbird</option><option value='434'>Short-billed Dowitcher</option><option value='435'>Short-eared Owl</option><option value='436'>Short-tailed Hawk</option><option value='437'>Short-tailed Shearwater</option><option value='438'>Smith's Longspur</option><option value='439'>Smooth-billed Ani</option><option value='440'>Snail Kite</option><option value='441'>Snow Bunting</option><option value='442'>Snow Goose</option><option value='443'>Snowy Egret</option><option value='444'>Snowy Owl</option><option value='445'>Snowy Plover</option><option value='446'>Solitary Sandpiper</option><option value='447'>Solitary Vireo</option><option value='448'>Song Sparrow</option><option value='449'>Sooty Shearwater</option><option value='450'>Sora</option><option value='451'>Spot-breasted Oriole</option><option value='452'>Spotted Dove</option><option value='453'>Spotted Owl</option><option value='454'>Spotted Sandpiper</option><option value='455'>Sprague's Pipit</option><option value='456'>Spruce Grouse</option><option value='457'>Steller's Eider</option><option value='458'>Steller's Jay</option><option value='459'>Stilt Sandpiper</option><option value='460'>Summer Tanager</option><option value='461'>Surf Scoter</option><option value='462'>Surfbird</option><option value='463'>Swainson's Hawk</option><option value='464'>Swamp Sparrow</option><option value='465'>Tennessee Warbler</option><option value='466'>Thayer's Gull</option><option value='467'>Thick-billed Kingbird</option><option value='468'>Thick-billed Murre</option><option value='469'>Townsend's Solitaire</option><option value='470'>Townsend's Warbler</option><option value='471'>Tree Swallow</option><option value='472'>Tricolored Blackbird</option><option value='473'>Tricolored Heron</option><option value='474'>Tropical Kingbird</option><option value='475'>Tropical Parula</option><option value='476'>Trumpeter Swan</option><option value='477'>Tufted Duck</option><option value='478'>Tufted Titmouse</option><option value='479'>Tundra Swan</option><option value='480'>Turkey Vulture</option><option value='481'>Varied Thrush</option><option value='482'>Vaux's Swift</option><option value='483'>Verdin</option><option value='484'>Vermilion Flycatcher</option><option value='485'>Vesper Sparrow</option><option value='486'>Violet-crowned Hummingbird</option><option value='487'>Violet-green Swallow</option><option value='488'>Virginia Rail</option><option value='489'>Wandering Tattler</option><option value='490'>Western Bluebird</option><option value='491'>Western Gull</option><option value='492'>Western Kingbird</option><option value='493'>Western Meadowlark</option><option value='494'>Western Sandpiper</option><option value='495'>Western Screech-Owl</option><option value='497'>Western Tanager</option><option value='498'>Whimbrel</option><option value='499'>Whiskered Screech-Owl</option><option value='500'>White Ibis</option><option value='501'>White-breasted Nuthatch</option><option value='502'>White-collared Seedeater</option><option value='503'>White-crowned Pigeon</option><option value='504'>White-crowned Sparrow</option><option value='505'>White-eyed Vireo</option><option value='506'>White-faced Ibis</option><option value='507'>White-headed Woodpecker</option><option value='508'>White-rumped Sandpiper</option><option value='509'>White-tailed Hawk</option><option value='510'>White-tailed Kite</option><option value='511'>White-tailed Ptarmigan</option><option value='512'>White-throated Sparrow</option><option value='513'>White-throated Swift</option><option value='514'>White-tipped Dove</option><option value='515'>White-winged Crossbill</option><option value='516'>White-winged Dove</option><option value='517'>White-winged Parakeet</option><option value='518'>White-winged Scoter</option><option value='519'>Whooping Crane</option><option value='520'>Wild Turkey</option><option value='521'>Willet</option><option value='522'>Williamson's Sapsucker</option><option value='523'>Willow Ptarmigan</option><option value='524'>Wilson's Phalarope</option><option value='525'>Wilson's Plover</option><option value='526'>Wilson's Snipe</option><option value='527'>Wilson's Warbler</option><option value='528'>Winter Wren</option><option value='529'>Wood Duck</option><option value='530'>Wood Stork</option><option value='531'>Wood Thrush</option><option value='532'>Worm-eating Warbler</option><option value='533'>Wrentit</option><option value='534'>Yellow Rail</option><option value='535'>Yellow Warbler</option><option value='536'>Yellow-bellied Sapsucker</option><option value='537'>Yellow-billed Loon</option><option value='538'>Yellow-billed Magpie</option><option value='539'>Yellow-breasted Chat</option><option value='540'>Yellow-crowned Night-Heron</option><option value='541'>Yellow-eyed Junco</option><option value='542'>Yellow-headed Blackbird</option><option value='543'>Yellow-rumped Warbler</option><option value='544'>Yellow-throated Vireo</option><option value='545'>Zone-tailed Hawk</option><select><div style='width:150px'><form autocomplete='off' action='/action_page.php'><div class='autocomplete' style='width:300px;'><input id='myInput' class='field r2' type='text' name='myCountry' placeholder='Enter Common Name'></div></form></div><div style='width:130px;margin-left:215px;margin-top: -49px'><a href='#' class='button blue small' onclick='initiateMapSearch();'>Submit</a></div><br><b>SELECT UNIT:</b><ul><input type='radio' name='unit[]' id='LCC' onclick='handleClick(this);' /> Landscape Conservation Cooperative<br><input type='radio' name='unit[]' id='BCR' onclick='handleClick(this);' checked /> Bird Conservation Region<br><input type='radio' name='unit[]' id='SP' onclick='handleClick(this);' /> State/Province<br><input type='radio' name='unit[]' id='National' onclick='handleClick(this);'> National</ul></div><br>";
+	
+    div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+    return div;
+};
+legend.addTo(map);	
+
+
+// FOR DROP-DOWNS
+function initiateMapDD(alphaRange){
+
+		// grab 4 letter bird code
+		str = $( "#"+alphaRange+" option:selected" ).text().replace(/'/g, ''); // remove apostrophe for SQL query
+		
+		var query = "SELECT * FROM sibley_file WHERE com_name ='"+str+"'";
+		sql.execute(query).done(function(data){
+		sciName = data.rows[0].sci_name;
+		imgURL = data.rows[0].img_url;
+		pageURL = data.rows[0].page_url;
+		imgWidth = data.rows[0].img_width;
+		imgHeight = data.rows[0].img_height;
+		// ADD LEGEND
+		addLegend(str, sciName, imgURL, pageURL, imgWidth, imgHeight, alphaRange); // add width, height
+		});
+
+		var query = "SELECT * FROM all_cbc_results_clean_2p1 WHERE common_name ='"+str+"'";
+		sql.execute(query).done(function(data){
+		alphaCode = data.rows[0].species_code;
+		// SHOW SPECIES
+		showSpecies(alphaCode, str);
+		var alphaRange = "";
+		$('#myInput').val("");
+		});
+}
+
+
+var alphaRange = "";
+
+// FOR SEARCH BOX
+function initiateMapSearch(){
+		// initialize CARTO account
+		var sql = cartodb.SQL({ user: 'audubon-admin' });
+		var alphaRange = "";
+
+		// grab text in text box
+		//str = $( "#"+alphaRange+" option:selected" ).text().replace(/'/g, ''); // remove apostrophe for SQL query
+		var str = document.getElementById('myInput').value
+		str = str.replace('’', ''); // remove apostrophe for SQL query
+		
+		var query = "SELECT * FROM sibley_file WHERE com_name = '"+str+"'";
+
+		sql.execute(query).done(function(data){
+		sciName = data.rows[0].sci_name;
+		imgURL = data.rows[0].img_url;
+		pageURL = data.rows[0].page_url;
+		imgWidth = data.rows[0].img_width;
+		imgHeight = data.rows[0].img_height;
+
+		// ADD LEGEND
+		//addLegend(str, sciName, imgURL, pageURL, imgWidth, imgHeight, alphaRange); // add width, height
+		addLegend(document.getElementById('myInput').value, sciName, imgURL, pageURL, imgWidth, imgHeight); // add width, height
+		});
+
+		var query = "SELECT * FROM all_cbc_results_clean_2p1 WHERE common_name ='"+str+"'";
+		sql.execute(query).done(function(data){
+		alphaCode = data.rows[0].species_code;
+		// SHOW SPECIES
+		showSpecies(alphaCode, str);
+		
+		$('#A-Z').val(0);
+		});
+}
+
+
+
+// change event for species drop-down
+$('#A-Z').change(function(event){
+	alphaRange = "A-Z";
+	initiateMapDD(alphaRange);
+});
+
+
+
+// change event for radio button
+function handleClick() {
+
+
+	if ($('#A-Z').val() > 0){alphaRange = "A-Z";}
+	else{alphaRange = "";}
+	
+	//alert("handle click");
+	//alert(alphaRange);	
+	
+	// check if DD or Search is selected
+	if (alphaRange.length == 3){
+		initiateMapDD(alphaRange);
+		
+		//alert("DD");
+		}
+	else{
+		initiateMapSearch();
+		//alert("Search");
+		}
+		
+}
+		
+	
+// add basemap and overlays
+var baseMaps = {
+	"dark": CartoLight,
+	"grey": ESRIGrey,
+	"satellite": ESRIImagery,
+	"streets (OSM)<br><center><a href='http://web4.audubon.org/scidev/cbc_trends' target='_blank'><img src='img/fullscreen_sm.png' title='Full Screen'/></a>&nbsp;&nbsp;<a href='https://www.audubon.org/conservation/where-have-all-birds-gone#FAQ' target='_blank'><img src='img/faq_sm.png' title='Frequently Asked Questions'/></a>&nbsp;&nbsp;<a href='https://www.audubon.org/christmas-bird-count-bibliography' target='_blank'><img src='img/doc_sm.png' title='Bibliography'/></a>&nbsp;&nbsp;<a href='https://form.jotform.com/82044616781155' target='_blank'><img src='img/data_sm.png' title='Data Download'/></a></center>": OSMStreets
+};
+
+L.control.layers(baseMaps, null, {position: 'topright', collapsed: false}).addTo(map);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      });
+}
+
+/*An array containing all the country names in the world:*/
+
+var speciesList = ["Abert&#8217;s Towhee","Acorn Woodpecker","Allen&#8217;s Hummingbird","Altamira Oriole","American Avocet","American Bittern","American Black Duck","American Coot","American Crow","American Dipper","American Goldfinch","American Kestrel","American Oystercatcher","American Pipit","American Redstart","American Robin","American Three-toed Woodpecker","American Tree Sparrow","American White Pelican","American Wigeon","American Woodcock","Ancient Murrelet","Anhinga","Anna&#8217;s Hummingbird","Aplomado Falcon","Arctic Loon","Arizona Woodpecker","Ash-throated Flycatcher","Atlantic Puffin","Audubon&#8217;s Oriole","Bachman&#8217;s Sparrow","Baird&#8217;s Sparrow","Bald Eagle","Baltimore Oriole","Band-tailed Pigeon","Barn Owl","Barn Swallow","Barred Owl","Barrow&#8217;s Goldeneye","Bell&#8217;s Vireo","Belted Kingfisher","Bendire&#8217;s Thrasher","Bewick&#8217;s Wren","Black Guillemot","Black Oystercatcher","Black Phoebe","Black Rail","Black Rosy-Finch","Black Scoter","Black Skimmer","Black Turnstone","Black Vulture","Black-and-white Warbler","Black-backed Woodpecker","Black-bellied Plover","Black-bellied Whistling-Duck","Black-billed Magpie","Black-capped Chickadee","Black-chinned Hummingbird","Black-chinned Sparrow","Black-crowned Night-Heron","Black-footed Albatross","Black-headed Grosbeak","Black-headed Gull","Black-legged Kittiwake","Black-necked Stilt","Black-throated Blue Warbler","Black-throated Gray Warbler","Black-throated Green Warbler","Black-throated Sparrow","Blue Grosbeak","Blue Jay","Blue-gray Gnatcatcher","Blue-throated Hummingbird","Blue-winged Teal","Boat-tailed Grackle","Bohemian Waxwing","Bonaparte&#8217;s Gull","Boreal Chickadee","Boreal Owl","Brandt&#8217;s Cormorant","Brant","Brewer&#8217;s Blackbird","Brewer&#8217;s Sparrow","Bridled Titmouse","Broad-billed Hummingbird","Broad-tailed Hummingbird","Broad-winged Hawk","Bronzed Cowbird","Brown Booby","Brown Creeper","Brown Pelican","Brown Thrasher","Brown-crested Flycatcher","Brown-headed Cowbird","Brown-headed Nuthatch","Budgerigar","Buff-bellied Hummingbird","Bufflehead","Bullock&#8217;s Oriole","Burrowing Owl","Bushtit","Cactus Wren","California Condor","California Gnatcatcher","California Gull","California Quail","California Thrasher","Calliope Hummingbird","Canada Goose","Canvasback","Canyon Wren","Cape May Warbler","Carolina Chickadee","Carolina Wren","Caspian Tern","Cassin&#8217;s Auklet","Cassin&#8217;s Finch","Cassin&#8217;s Kingbird","Cassin&#8217;s Sparrow","Cattle Egret","Cave Swallow","Cedar Waxwing","Chestnut-backed Chickadee","Chestnut-collared Longspur","Chestnut-sided Warbler","Chihuahuan Raven","Chipping Sparrow","Chuck-will&#8217;s-widow","Chukar","Cinnamon Teal","Clapper Rail","Clark&#8217;s Grebe","Clark&#8217;s Nutcracker","Clay-colored Sparrow","Clay-colored Thrush","Common Eider","Common Gallinule","Common Goldeneye","Common Grackle","Common Ground-Dove","Common Loon","Common Merganser","Common Murre","Common Myna","Common Pauraque","Common Poorwill","Common Raven","Common Redpoll","Common Tern","Common Yellowthroat","Cooper&#8217;s Hawk","Costa&#8217;s Hummingbird","Crested Caracara","Crested Myna","Crissal Thrasher","Curve-billed Thrasher","Dark-eyed Junco","Double-crested Cormorant","Dovekie","Downy Woodpecker","Dunlin","Dusky Flycatcher","Dusky Grouse","Dusky-capped Flycatcher","Eared Grebe","Eastern Bluebird","Eastern Meadowlark","Eastern Phoebe","Eastern Screech-Owl","Eastern Whip-poor-will","Eastern Wood-Pewee","Elegant Tern","Elegant Trogon","Emperor Goose","Eurasian Collared-Dove","Eurasian Tree Sparrow","Eurasian Wigeon","European Starling","Evening Grosbeak","Ferruginous Hawk","Ferruginous Pygmy-Owl","Field Sparrow","Fish Crow","Forster&#8217;s Tern","Fox Sparrow","Franklin&#8217;s Gull","Fulvous Whistling-Duck","Gadwall","Gambel&#8217;s Quail","Gila Woodpecker","Gilded Flicker","Glaucous Gull","Glaucous-winged Gull","Glossy Ibis","Golden Eagle","Golden-crowned Kinglet","Golden-crowned Sparrow","Golden-fronted Woodpecker","Grasshopper Sparrow","Gray Catbird","Gray Flycatcher","Gray Hawk","Gray Jay","Gray Partridge","Great Black-backed Gull","Great Blue Heron","Great Cormorant","Great Crested Flycatcher","Great Egret","Great Gray Owl","Great Horned Owl","Great Kiskadee","Greater Pewee","Greater Prairie-Chicken","Greater Roadrunner","Greater Sage-Grouse","Greater Scaup","Greater White-fronted Goose","Greater Yellowlegs","Green Heron","Green Jay","Green Kingfisher","Green Parakeet","Green-tailed Towhee","Green-winged Teal","Groove-billed Ani","Gull-billed Tern","Gyrfalcon","Hairy Woodpecker","Hammond&#8217;s Flycatcher","Harlequin Duck","Harris&#8217;s Hawk","Harris&#8217;s Sparrow","Heermann&#8217;s Gull","Henslow&#8217;s Sparrow","Hepatic Tanager","Hermit Thrush","Hermit Warbler","Herring Gull","Hill Myna","Hoary Redpoll","Hooded Merganser","Hooded Oriole","Hook-billed Kite","Horned Grebe","Horned Lark","House Finch","House Sparrow","House Wren","Hutton&#8217;s Vireo","Inca Dove","Indigo Bunting","Killdeer","King Eider","King Rail","Ladder-backed Woodpecker","Lapland Longspur","Lark Bunting","Lark Sparrow","Laughing Gull","Lawrence&#8217;s Goldfinch","Lazuli Bunting","Least Bittern","Least Flycatcher","Least Grebe","Least Sandpiper","Least Tern","LeConte&#8217;s Sparrow","LeConte&#8217;s Thrasher","Lesser Black-backed Gull","Lesser Goldfinch","Lesser Nighthawk","Lesser Prairie-Chicken","Lesser Scaup","Lesser Yellowlegs","Lewis&#8217;s Woodpecker","Limpkin","Lincoln&#8217;s Sparrow","Little Blue Heron","Little Gull","Loggerhead Shrike","Long-billed Curlew","Long-billed Dowitcher","Long-billed Thrasher","Long-eared Owl","Long-tailed Duck","Louisiana Waterthrush","MacGillivray&#8217;s Warbler","Magnificent Frigatebird","Magnolia Warbler","Mallard","Rivoli&#8217;s Hummingbird","Marbled Godwit","Marbled Murrelet","Marsh Wren","McCown&#8217;s Longspur","McKay&#8217;s Bunting","Merlin","Mew Gull","Mexican Chickadee","Mexican Jay","Monk Parakeet","Montezuma Quail","Mottled Duck","Mountain Bluebird","Mountain Chickadee","Mountain Plover","Mountain Quail","Mourning Dove","Mute Swan","Nashville Warbler","Neotropic Cormorant","Northern Beardless-Tyrannulet","Northern Bobwhite","Northern Cardinal","Northern Flicker","Northern Fulmar","Northern Gannet","Northern Goshawk","Northern Harrier","Northern Hawk Owl","Northern Mockingbird","Northern Parula","Northern Pintail","Northern Pygmy-Owl","Northern Rough-winged Swallow","Northern Saw-whet Owl","Northern Shoveler","Northern Shrike","Northern Waterthrush","Northwestern Crow","Nuttall&#8217;s Woodpecker","Oak Titmouse","Olive Sparrow","Olive Warbler","Orange-crowned Warbler","Orchard Oriole","Osprey","Ovenbird","Pacific Golden-Plover","Pacific-slope Flycatcher","Painted Bunting","Painted Redstart","Palm Warbler","Parasitic Jaeger","Pectoral Sandpiper","Pelagic Cormorant","Peregrine Falcon","Phainopepla","Pied-billed Grebe","Pigeon Guillemot","Pileated Woodpecker","Pine Grosbeak","Pine Siskin","Pine Warbler","Pinyon Jay","Piping Plover","Plain Chachalaca","Pomarine Jaeger","Prairie Falcon","Prairie Warbler","Prothonotary Warbler","Purple Finch","Purple Gallinule","Purple Sandpiper","Pygmy Nuthatch","Pyrrhuloxia","Razorbill","Red Crossbill","Red Knot","Red-bellied Woodpecker","Red-billed Pigeon","Red-breasted Merganser","Red-breasted Nuthatch","Red-breasted Sapsucker","Red-cockaded Woodpecker","Red-crowned Parrot","Reddish Egret","Red-faced Cormorant","Redhead","Red-headed Woodpecker","Red-necked Grebe","Red-necked Phalarope","Red-shouldered Hawk","Red-tailed Hawk","Red-throated Loon","Red-winged Blackbird","Rhinoceros Auklet","Ring-billed Gull","Ringed Kingfisher","Ring-necked Duck","Ring-necked Pheasant","Rock Ptarmigan","Rock Sandpiper","Rock Wren","Roseate Spoonbill","Rose-breasted Grosbeak","Rose-ringed Parakeet","Ross&#8217;s Goose","Rough-legged Hawk","Royal Tern","Ruby-crowned Kinglet","Ruby-throated Hummingbird","Ruddy Duck","Ruddy Ground-Dove","Ruddy Turnstone","Ruffed Grouse","Rufous Hummingbird","Rufous-crowned Sparrow","Rufous-sided Towhee","Rufous-winged Sparrow","Rusty Blackbird","Sage Thrasher","Sagebrush Sparrow","Sanderling","Sandhill Crane","Sandwich Tern","Savannah Sparrow","Say&#8217;s Phoebe","Scaled Quail","Scissor-tailed Flycatcher","Scott&#8217;s Oriole","Seaside Sparrow","Sedge Wren","Semipalmated Plover","Semipalmated Sandpiper","Sharp-shinned Hawk","Sharp-tailed Grouse","Sharp-tailed Sparrow","Shiny Cowbird","Short-billed Dowitcher","Short-eared Owl","Short-tailed Hawk","Short-tailed Shearwater","Smith&#8217;s Longspur","Smooth-billed Ani","Snail Kite","Snow Bunting","Snow Goose","Snowy Egret","Snowy Owl","Snowy Plover","Solitary Sandpiper","Solitary Vireo","Song Sparrow","Sooty Shearwater","Sora","Spot-breasted Oriole","Spotted Dove","Spotted Owl","Spotted Sandpiper","Sprague&#8217;s Pipit","Spruce Grouse","Steller&#8217;s Eider","Steller&#8217;s Jay","Stilt Sandpiper","Summer Tanager","Surf Scoter","Surfbird","Swainson&#8217;s Hawk","Swamp Sparrow","Tennessee Warbler","Thayer&#8217;s Gull","Thick-billed Kingbird","Thick-billed Murre","Townsend&#8217;s Solitaire","Townsend&#8217;s Warbler","Tree Swallow","Tricolored Blackbird","Tricolored Heron","Tropical Kingbird","Tropical Parula","Trumpeter Swan","Tufted Duck","Tufted Titmouse","Tundra Swan","Turkey Vulture","Varied Thrush","Vaux&#8217;s Swift","Verdin","Vermilion Flycatcher","Vesper Sparrow","Violet-crowned Hummingbird","Violet-green Swallow","Virginia Rail","Wandering Tattler","Western Bluebird","Western Gull","Western Kingbird","Western Meadowlark","Western Sandpiper","Western Screech-Owl","Western Tanager","Whimbrel","Whiskered Screech-Owl","White Ibis","White-breasted Nuthatch","White-collared Seedeater","White-crowned Pigeon","White-crowned Sparrow","White-eyed Vireo","White-faced Ibis","White-headed Woodpecker","White-rumped Sandpiper","White-tailed Hawk","White-tailed Kite","White-tailed Ptarmigan","White-throated Sparrow","White-throated Swift","White-tipped Dove","White-winged Crossbill","White-winged Dove","White-winged Parakeet","White-winged Scoter","Whooping Crane","Wild Turkey","Willet","Williamson&#8217;s Sapsucker","Willow Ptarmigan","Wilson&#8217;s Phalarope","Wilson&#8217;s Plover","Wilson&#8217;s Snipe","Wilson&#8217;s Warbler","Winter Wren","Wood Duck","Wood Stork","Wood Thrush","Worm-eating Warbler","Wrentit","Yellow Rail","Yellow Warbler","Yellow-bellied Sapsucker","Yellow-billed Loon","Yellow-billed Magpie","Yellow-breasted Chat","Yellow-crowned Night-Heron","Yellow-eyed Junco","Yellow-headed Blackbird","Yellow-rumped Warbler","Yellow-throated Vireo","Zone-tailed Hawk"];
+
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), speciesList);
+
+
+//////////////////////////////////////////
+
+// initialize CARTO account
+var sql = cartodb.SQL({ user: 'audubon-admin' });
+
+//////////////////////////////////////////
+
+/*
+var imgWidth = 0;
+var imgHeight = 0;
+
+function getImageSize (path, callback) {
+  var image = new Image();
+  image.name = path;
+  image.onload = function() {
+	callback({width : this.width, height : this.height});
+  }
+  image.src = path;
+};
+*/
+
+
+// LEGEND
+var legend2;
+legend2 = L.control({position: 'topright'});	
+var legend2Count = 0;
+var sciName;
+	
+// ADD LEGEND IN TOP RIGHT	
+function addLegend(str, sciName, imgURL, pageURL, img_width, img_height){
+
+	if (legend2Count > 0){map.removeControl(legend2);}
+	
+		/*
+		// determine image aspect ratio		
+		getImageSize("http://www.audubon.org/sites/default/files/"+imgURL, function(dim) {
+		// do something with dim.width, dim.height'
+		imgWidth = dim.width;
+		imgHeight= dim.height;
+		alert(imgWidth+" "+imgHeight);		
+		});
+		*/
+
+		legend2.onAdd = function (map) {
+				var div = L.DomUtil.create('div', 'info legend');
+				
+				// max height = 130px
+				//var aspectRatio = (img_width/img_height)
+				//var adjWidth = (aspectRatio*85.0);
+				//alert(img_width+" "+img_height);
+				
+				var imgURL_cmb = imgURL.slice(0, -4)+"_r.jpg";
+				
+				div.innerHTML = div.innerHTML + "<div class='map-legend'><table id='table03a'><tr><td rowspan='2'><a href='"+pageURL+"' target='_blank'><img class='resize' src='//web4.audubon.org/scidev/cbc_trends/img/sibley/"+imgURL_cmb+"' title='Click to visit North American Bird Guide page'/></a></td><td><h5>"+str+"</h5></td><td rowspan='2'><img src='img/map_legend.png'></td></tr><tr><td><i>"+sciName+"</i></td></tr></table></div>";				
+				
+				
+				//div.innerHTML = div.innerHTML + "<div class='map-legend'><table id='table03a'><tr><td rowspan='2'><a href='"+pageURL+"' target='_blank'><img class='resize' src='http://www.audubon.org/sites/default/files/"+imgURL+"' width='"+adjWidth+"' height='85px' title='Click to visit North American Bird Guide page'/></a></td><td><h5>"+str+"</h5></td><td rowspan='2'><img src='img/map_legend.png'></td></tr><tr><td><i>"+sciName+"</i></td></tr></table></div>";
+				
+				
+				//div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+				return div;
+				legend2.setZIndex(2);
+		};	
+
+	
+
+	legend2.addTo(map);
+	legend2Count = legend2Count + 1;
+}
+
+
+
+// SPECIES
+//var startSpecies = 0;  
+var countSpecies = 0;
+var sublayersSpecies = [];
+var abbrev = "med_1966_2017";
+//var alphaCode = "";
+
+function showSpecies(alphaCode, str){
+
+		// remove previous layer if not the first one added to sublayer list
+		if (countSpecies > 0){
+			$(".cartodb-infowindow").remove(); // vicente addition
+			sublayersSpecies[countSpecies-1].remove();
+		}
+
+		// increase count by one
+		countSpecies = countSpecies + 1;	
+		
+		var button1 = document.getElementById("LCC");
+		var button2 = document.getElementById("BCR");
+		var button3 = document.getElementById("SP");
+		var button4 = document.getElementById("National");
+
+		
+		var MapQuerySpecies = "SELECT audubon-admin.all_cbc_results_clean_2p1.med_1966_2017, audubon-admin.all_cbc_results_clean_2p1.lcl_1966_2017, audubon-admin.all_cbc_results_clean_2p1.ucl_1966_2017, audubon-admin.all_cbc_results_clean_2p1.med_1966, audubon-admin.all_cbc_results_clean_2p1.lcl_1966, audubon-admin.all_cbc_results_clean_2p1.ucl_1966, audubon-admin.all_cbc_results_clean_2p1.med_1967, audubon-admin.all_cbc_results_clean_2p1.lcl_1967, audubon-admin.all_cbc_results_clean_2p1.ucl_1967, audubon-admin.all_cbc_results_clean_2p1.med_1968, audubon-admin.all_cbc_results_clean_2p1.lcl_1968, audubon-admin.all_cbc_results_clean_2p1.ucl_1968, audubon-admin.all_cbc_results_clean_2p1.med_1969, audubon-admin.all_cbc_results_clean_2p1.lcl_1969, audubon-admin.all_cbc_results_clean_2p1.ucl_1969, audubon-admin.all_cbc_results_clean_2p1.med_1970, audubon-admin.all_cbc_results_clean_2p1.lcl_1970, audubon-admin.all_cbc_results_clean_2p1.ucl_1970, audubon-admin.all_cbc_results_clean_2p1.med_1971, audubon-admin.all_cbc_results_clean_2p1.lcl_1971, audubon-admin.all_cbc_results_clean_2p1.ucl_1971, audubon-admin.all_cbc_results_clean_2p1.med_1972, audubon-admin.all_cbc_results_clean_2p1.lcl_1972, audubon-admin.all_cbc_results_clean_2p1.ucl_1972, audubon-admin.all_cbc_results_clean_2p1.med_1973, audubon-admin.all_cbc_results_clean_2p1.lcl_1973, audubon-admin.all_cbc_results_clean_2p1.ucl_1973, audubon-admin.all_cbc_results_clean_2p1.med_1974, audubon-admin.all_cbc_results_clean_2p1.lcl_1974, audubon-admin.all_cbc_results_clean_2p1.ucl_1974, audubon-admin.all_cbc_results_clean_2p1.med_1975, audubon-admin.all_cbc_results_clean_2p1.lcl_1975, audubon-admin.all_cbc_results_clean_2p1.ucl_1975, audubon-admin.all_cbc_results_clean_2p1.med_1976, audubon-admin.all_cbc_results_clean_2p1.lcl_1976, audubon-admin.all_cbc_results_clean_2p1.ucl_1976, audubon-admin.all_cbc_results_clean_2p1.med_1977, audubon-admin.all_cbc_results_clean_2p1.lcl_1977, audubon-admin.all_cbc_results_clean_2p1.ucl_1977, audubon-admin.all_cbc_results_clean_2p1.med_1978, audubon-admin.all_cbc_results_clean_2p1.lcl_1978, audubon-admin.all_cbc_results_clean_2p1.ucl_1978, audubon-admin.all_cbc_results_clean_2p1.med_1979, audubon-admin.all_cbc_results_clean_2p1.lcl_1979, audubon-admin.all_cbc_results_clean_2p1.ucl_1979, audubon-admin.all_cbc_results_clean_2p1.med_1980, audubon-admin.all_cbc_results_clean_2p1.lcl_1980, audubon-admin.all_cbc_results_clean_2p1.ucl_1980, audubon-admin.all_cbc_results_clean_2p1.med_1981, audubon-admin.all_cbc_results_clean_2p1.lcl_1981, audubon-admin.all_cbc_results_clean_2p1.ucl_1981, audubon-admin.all_cbc_results_clean_2p1.med_1982, audubon-admin.all_cbc_results_clean_2p1.lcl_1982, audubon-admin.all_cbc_results_clean_2p1.ucl_1982, audubon-admin.all_cbc_results_clean_2p1.med_1983, audubon-admin.all_cbc_results_clean_2p1.lcl_1983, audubon-admin.all_cbc_results_clean_2p1.ucl_1983, audubon-admin.all_cbc_results_clean_2p1.med_1984, audubon-admin.all_cbc_results_clean_2p1.lcl_1984, audubon-admin.all_cbc_results_clean_2p1.ucl_1984, audubon-admin.all_cbc_results_clean_2p1.med_1985, audubon-admin.all_cbc_results_clean_2p1.lcl_1985, audubon-admin.all_cbc_results_clean_2p1.ucl_1985, audubon-admin.all_cbc_results_clean_2p1.med_1986, audubon-admin.all_cbc_results_clean_2p1.lcl_1986, audubon-admin.all_cbc_results_clean_2p1.ucl_1986, audubon-admin.all_cbc_results_clean_2p1.med_1987, audubon-admin.all_cbc_results_clean_2p1.lcl_1987, audubon-admin.all_cbc_results_clean_2p1.ucl_1987, audubon-admin.all_cbc_results_clean_2p1.med_1988, audubon-admin.all_cbc_results_clean_2p1.lcl_1988, audubon-admin.all_cbc_results_clean_2p1.ucl_1988, audubon-admin.all_cbc_results_clean_2p1.med_1989, audubon-admin.all_cbc_results_clean_2p1.lcl_1989, audubon-admin.all_cbc_results_clean_2p1.ucl_1989, audubon-admin.all_cbc_results_clean_2p1.med_1990, audubon-admin.all_cbc_results_clean_2p1.lcl_1990, audubon-admin.all_cbc_results_clean_2p1.ucl_1990, audubon-admin.all_cbc_results_clean_2p1.med_1991, audubon-admin.all_cbc_results_clean_2p1.lcl_1991, audubon-admin.all_cbc_results_clean_2p1.ucl_1991, audubon-admin.all_cbc_results_clean_2p1.med_1992, audubon-admin.all_cbc_results_clean_2p1.lcl_1992, audubon-admin.all_cbc_results_clean_2p1.ucl_1992, audubon-admin.all_cbc_results_clean_2p1.med_1993, audubon-admin.all_cbc_results_clean_2p1.lcl_1993, audubon-admin.all_cbc_results_clean_2p1.ucl_1993, audubon-admin.all_cbc_results_clean_2p1.med_1994, audubon-admin.all_cbc_results_clean_2p1.lcl_1994, audubon-admin.all_cbc_results_clean_2p1.ucl_1994, audubon-admin.all_cbc_results_clean_2p1.med_1995, audubon-admin.all_cbc_results_clean_2p1.lcl_1995, audubon-admin.all_cbc_results_clean_2p1.ucl_1995, audubon-admin.all_cbc_results_clean_2p1.med_1996, audubon-admin.all_cbc_results_clean_2p1.lcl_1996, audubon-admin.all_cbc_results_clean_2p1.ucl_1996, audubon-admin.all_cbc_results_clean_2p1.med_1997, audubon-admin.all_cbc_results_clean_2p1.lcl_1997, audubon-admin.all_cbc_results_clean_2p1.ucl_1997, audubon-admin.all_cbc_results_clean_2p1.med_1998, audubon-admin.all_cbc_results_clean_2p1.lcl_1998, audubon-admin.all_cbc_results_clean_2p1.ucl_1998, audubon-admin.all_cbc_results_clean_2p1.med_1999, audubon-admin.all_cbc_results_clean_2p1.lcl_1999, audubon-admin.all_cbc_results_clean_2p1.ucl_1999, audubon-admin.all_cbc_results_clean_2p1.med_2000, audubon-admin.all_cbc_results_clean_2p1.lcl_2000, audubon-admin.all_cbc_results_clean_2p1.ucl_2000, audubon-admin.all_cbc_results_clean_2p1.med_2001, audubon-admin.all_cbc_results_clean_2p1.lcl_2001, audubon-admin.all_cbc_results_clean_2p1.ucl_2001, audubon-admin.all_cbc_results_clean_2p1.med_2002, audubon-admin.all_cbc_results_clean_2p1.lcl_2002, audubon-admin.all_cbc_results_clean_2p1.ucl_2002, audubon-admin.all_cbc_results_clean_2p1.med_2003, audubon-admin.all_cbc_results_clean_2p1.lcl_2003, audubon-admin.all_cbc_results_clean_2p1.ucl_2003, audubon-admin.all_cbc_results_clean_2p1.med_2004, audubon-admin.all_cbc_results_clean_2p1.lcl_2004, audubon-admin.all_cbc_results_clean_2p1.ucl_2004, audubon-admin.all_cbc_results_clean_2p1.med_2005, audubon-admin.all_cbc_results_clean_2p1.lcl_2005, audubon-admin.all_cbc_results_clean_2p1.ucl_2005, audubon-admin.all_cbc_results_clean_2p1.med_2006, audubon-admin.all_cbc_results_clean_2p1.lcl_2006, audubon-admin.all_cbc_results_clean_2p1.ucl_2006, audubon-admin.all_cbc_results_clean_2p1.med_2007, audubon-admin.all_cbc_results_clean_2p1.lcl_2007, audubon-admin.all_cbc_results_clean_2p1.ucl_2007, audubon-admin.all_cbc_results_clean_2p1.med_2008, audubon-admin.all_cbc_results_clean_2p1.lcl_2008, audubon-admin.all_cbc_results_clean_2p1.ucl_2008, audubon-admin.all_cbc_results_clean_2p1.med_2009, audubon-admin.all_cbc_results_clean_2p1.lcl_2009, audubon-admin.all_cbc_results_clean_2p1.ucl_2009, audubon-admin.all_cbc_results_clean_2p1.med_2010, audubon-admin.all_cbc_results_clean_2p1.lcl_2010, audubon-admin.all_cbc_results_clean_2p1.ucl_2010, audubon-admin.all_cbc_results_clean_2p1.med_2011, audubon-admin.all_cbc_results_clean_2p1.lcl_2011, audubon-admin.all_cbc_results_clean_2p1.ucl_2011, audubon-admin.all_cbc_results_clean_2p1.med_2012, audubon-admin.all_cbc_results_clean_2p1.lcl_2012, audubon-admin.all_cbc_results_clean_2p1.ucl_2012, audubon-admin.all_cbc_results_clean_2p1.med_2013, audubon-admin.all_cbc_results_clean_2p1.lcl_2013, audubon-admin.all_cbc_results_clean_2p1.ucl_2013, audubon-admin.all_cbc_results_clean_2p1.med_2014, audubon-admin.all_cbc_results_clean_2p1.lcl_2014, audubon-admin.all_cbc_results_clean_2p1.ucl_2014, audubon-admin.all_cbc_results_clean_2p1.med_2015, audubon-admin.all_cbc_results_clean_2p1.lcl_2015, audubon-admin.all_cbc_results_clean_2p1.ucl_2015, audubon-admin.all_cbc_results_clean_2p1.med_2016, audubon-admin.all_cbc_results_clean_2p1.lcl_2016, audubon-admin.all_cbc_results_clean_2p1.ucl_2016, audubon-admin.all_cbc_results_clean_2p1.med_2017, audubon-admin.all_cbc_results_clean_2p1.lcl_2017, audubon-admin.all_cbc_results_clean_2p1.ucl_2017, audubon-admin.cbc_mapunits.unitname, audubon-admin.all_cbc_results_clean_2p1.unit, audubon-admin.cbc_mapunits.the_geom_webmercator as the_geom_webmercator, audubon-admin.cbc_mapunits.cartodb_id as cartodb_id FROM audubon-admin.cbc_mapunits FULL OUTER JOIN audubon-admin.all_cbc_results_clean_2p1 ON audubon-admin.cbc_mapunits.strata=audubon-admin.all_cbc_results_clean_2p1.unit";
+		
+		//alert(alphaCode);
+		var MapQuerySpecies2 = "SELECT audubon-admin.all_cbc_results_clean_2p1";
+		
+		
+		if (button1.checked){
+			MapQuerySpecies = MapQuerySpecies + " WHERE audubon-admin.all_cbc_results_clean_2p1.species_code = '"+alphaCode+"' AND audubon-admin.all_cbc_results_clean_2p1.unit LIKE 'LCC%'";
+		}
+		else if (button2.checked){
+			MapQuerySpecies = MapQuerySpecies + " WHERE audubon-admin.all_cbc_results_clean_2p1.species_code = '"+alphaCode+"' AND audubon-admin.all_cbc_results_clean_2p1.unit LIKE 'BCR%'";
+			
+		}		
+		else if (button3.checked){
+			MapQuerySpecies = MapQuerySpecies + " WHERE audubon-admin.all_cbc_results_clean_2p1.species_code = '"+alphaCode+"' AND LENGTH(audubon-admin.all_cbc_results_clean_2p1.unit) = 2";
+		}	
+		else{
+			MapQuerySpecies = MapQuerySpecies + " WHERE audubon-admin.all_cbc_results_clean_2p1.species_code = '"+alphaCode+"' AND LENGTH(audubon-admin.all_cbc_results_clean_2p1.unit) = 3";
+		}	
+		
+		var CartoCSSSpecies = "#audubon-admin.cbc_mapunits{polygon-fill: #0080ff;polygon-opacity: 0.85;line-color: #FFF;line-width: 0.5;line-opacity: 1;#audubon-admin.cbc_mapunits[ "+abbrev+" >= 0] {polygon-fill: #6baed6;}#audubon-admin.cbc_mapunits[ "+abbrev+" >= 0.5] {polygon-fill: #3182bd;}#audubon-admin.cbc_mapunits[ "+abbrev+" > 2] {polygon-fill: #08519c;}#audubon-admin.cbc_mapunits[ "+abbrev+" = 0] {polygon-fill: #d3d3d3;}#audubon-admin.cbc_mapunits[ "+abbrev+" < 0] {polygon-fill: #fb6a4a;}#audubon-admin.cbc_mapunits[ "+abbrev+" <= -0.5] {polygon-fill: #de2d26;}#audubon-admin.cbc_mapunits[ "+abbrev+" <= -2] {polygon-fill: #a50f15;}}";		
+		
+		cartodb.createLayer(map, 'https://stanford.carto.com/u/gverutes/api/v2/viz/4cc61786-4628-4e48-8aad-80836f23b293/viz.json')
+		.addTo(map)
+         .on('done', function(layer) {
+            // get sublayer 0 and set the infowindow template
+			// change the query for the first layer
+
+			var subLayerOptions = {
+			  sql: MapQuerySpecies,
+			  cartocss: CartoCSSSpecies,
+			}
+
+			var sublayer = layer.getSubLayer(0);
+			sublayer.set(subLayerOptions);
+			sublayersSpecies.push(sublayer);
+			layer.setZIndex(10);
+			
+            sublayer.infowindow.set({
+              //template:   INFOWINDOW_TEMPLATE,
+			  template:   $('#infowindow_template').html(),
+              sanitizeTemplate:  false,
+              width:      500,
+              maxHeight:  600
+            });
+
+			
+        /* enable mouse events with CartoDB layers */
+
+        // Set CartoDB layer interaction
+        layer.setInteraction(true);
+
+
+		// Event to set the unitname selected
+
+		
+		layer.on('featureClick', function(e, latlng, pos, data, subLayerIndex, str) {
+			unitname_selected = data.unitname;
+			//speciesname_selected = data.species_code;
+
+		});
+
+		
+		 
+        // define tootltip with createLayer
+		/*
+         var tooltip = layer.leafletMap.viz.addOverlay({
+            type: 'tooltip',
+            layer: layer,
+            //template: '<div class="cartodb-tooltip-content-wrapper"><p>{{unitname}}</p></div>', 
+            width: 1,
+            position: 'top|left',
+            fields: [{ }],
+          });
+
+          // add tooltip to map object
+          $('body').append(tooltip.render().el);
+		*/
+		
+         /* Set custom infobox (= hover infowindow) More information here:
+            http://docs.cartodb.com/cartodb-platform/cartodb-js/ui-functions/#visaddoverlayinfobox
+          */
+        
+      // Define infobox with createLayer()        
+
+       var infoBox = layer.leafletMap.viz.addOverlay({
+          type: 'infobox',
+          layer: layer,
+          template: '<div class="cartodb-tooltip-content-wrapper"><span><p><b>{{unitname}}</b></p><hr><p>Percent change<br>per year: <b>{{med_1966_2017}}</b></p><br><p>Lower confidence limit (LCL): <b>{{lcl_1966_2017}}</b></p><br><p>Upper confidence limit (UCL): <b>{{ucl_1966_2017}}</b></p></span></div>', 
+          width: 200,
+          position: 'bottom|right'
+        });
+
+       //2- Add infobox to map object
+        $('body').append(infoBox.render().el);     
+
+
+		
+        }).on('error', function() {
+            console.log("some error occurred");
+          });
+		  
+		//document.getElementById("map-legend").innerHTML = HTML;  
+		
+
+}
+
+</script>	
+</div>
+</body>
+</html>
